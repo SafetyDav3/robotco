@@ -1,0 +1,39 @@
+/* Global selector */
+
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+header {
+  background: #47a0ce;
+  text-align: center;
+}
+nav {
+  padding: 30px 15px 15px 15px;
+}
+
+#logo-container {
+  padding-top: 10px;
+}
+
+.bg-dark {
+  background: black;
+  color: #47a0ce;
+}
+
+.bg-dark a {
+  color: #47a0ce;
+}
+
+#hero {
+}
+
+.callout {
+}
