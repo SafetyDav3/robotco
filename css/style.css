@@ -1,3 +1,5 @@
+/* ********** ↓↓↓ Root directory ↓↓↓ ********** */
+
 :root {
   --brandPrimary: #8f45c8;
   --brandSecondary: #32b46f;
@@ -10,10 +12,14 @@
   --boxShadowProps: 5px 10px 8px 5px;
 }
 
-/* Global */
+/* ********** ↓↓↓ Base CSS ↓↓↓ ********** */
+
+/* ↓↓↓ Global ↓↓↓ */
 * {
   font-family: "Courier New", Courier, monospace;
 }
+
+/* ↓↓↓ Element by element ↓↓↓ */
 
 html,
 body {
@@ -42,68 +48,15 @@ nav a {
   margin: 0 20px;
 }
 
-.btn {
-  padding: 15px;
-  background: var(--brandSecondary);
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  transition: var(--transHover);
+footer i,
+p {
+  color: white;
 }
-
-.btn:hover {
-  background: var(--brandSecondaryDarker);
-}
-
 main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   padding: 60px 15px;
-}
-
-#logo-container {
-  display: inline-block;
-  padding-top: 10px;
-  background: var(--brandPrimary);
-  position: relative;
-  top: 20px;
-  padding: 10px;
-  box-shadow: var(--boxShadowProps);
-}
-
-#logo-container h2 {
-  margin-bottom: 0;
-}
-
-.bg-dark {
-  background: black;
-  color: var(--brandPrimary);
-}
-
-.bg-dark a {
-  color: var(--brandPrimary);
-}
-
-#hero {
-  background: black;
-  background-image: url("../images/background.png");
-  color: white;
-  text-align: center;
-  padding: 60px 15px;
-  font-size: 42px;
-  border-bottom: var(--borderFlare);
-}
-
-.callout {
-  border: 6px dotted var(--brandPrimary);
-  text-align: center;
-  margin: 0 30px;
-  padding: 30px 15px;
-  flex: 1 0 400px;
-  margin-bottom: 25px;
-  border-radius: var(--borderRadReverse);
-  transition: var(--transHover);
 }
 
 footer {
@@ -115,12 +68,49 @@ footer {
   margin-top: 60px;
 }
 
-#gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 1200px;
+/* ↓↓↓ Nested elements ↓↓↓ */
+
+.gallery-item p {
+  margin-top: 0px;
+}
+
+.gallery-item i {
+  transition: var(--transHover);
+}
+
+.bg-dark a {
+  color: var(--brandPrimary);
+}
+
+#logo-container h2 {
+  margin-bottom: 0;
+}
+
+/* ↓↓↓ Element by class ↓↓↓ */
+
+.btn {
+  padding: 15px;
+  background: var(--brandSecondary);
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  transition: var(--transHover);
+}
+
+.bg-dark {
+  background: black;
+  color: var(--brandPrimary);
+}
+
+.callout {
+  border: 6px dotted var(--brandPrimary);
+  text-align: center;
+  margin: 0 30px;
+  padding: 30px 15px;
+  flex: 1 0 400px;
+  margin-bottom: 25px;
+  border-radius: var(--borderRadReverse);
+  transition: var(--transHover);
 }
 
 .gallery-item {
@@ -148,6 +138,42 @@ footer {
   left: 0px;
 }
 
+/* ↓↓↓ Element by ID ↓↓↓ */
+
+#logo-container {
+  display: inline-block;
+  padding-top: 10px;
+  background: var(--brandPrimary);
+  position: relative;
+  top: 20px;
+  padding: 10px;
+  box-shadow: var(--boxShadowProps);
+}
+
+#hero {
+  background: black;
+  background-image: url("../images/background.png");
+  color: white;
+  text-align: center;
+  padding: 60px 15px;
+  font-size: 42px;
+  border-bottom: var(--borderFlare);
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* ********** ↓↓↓ Pseudo CSS ↓↓↓ ********** */
+
+.btn:hover {
+  background: var(--brandSecondaryDarker);
+}
+
 .gallery-item:hover .on-sale {
   background: white;
 }
@@ -168,20 +194,7 @@ footer {
   border-radius: var(--borderRad);
 }
 
-.gallery-item p {
-  margin-top: 0px;
-}
-
-.gallery-item i {
-  transition: var(--transHover);
-}
-
-footer i,
-p {
-  color: white;
-}
-
-/* ↓↓↓ Media Queries ↓↓↓ */
+/* ********** ↓↓↓ Media Queries ↓↓↓ ********** */
 
 @media (max-width: 767px) {
   header {
