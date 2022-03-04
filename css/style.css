@@ -1,9 +1,13 @@
 :root {
   --brandPrimary: #8f45c8;
   --brandSecondary: #32b46f;
-  --brandSecondaryDarker: #227549;
-  --borderRad: 6px solid var(--brandPrimary);
+  --brandTertiary: #47a0ce;
+  --brandSecondaryDarker: #259258;
+  --borderFlare: 6px solid var(--brandPrimary);
+  --borderRad: 5px 25px;
+  --borderRadReverse: 25px 5px;
   --transHover: all 260ms ease-in-out;
+  --boxShadowProps: 5px 10px 8px 5px;
 }
 
 /* Global */
@@ -13,6 +17,7 @@
 
 html,
 body {
+  background: var(--brandTertiary);
   margin: 0;
   padding: 0;
   height: 100%;
@@ -53,6 +58,7 @@ nav a {
 main {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 60px 15px;
 }
 
@@ -63,6 +69,7 @@ main {
   position: relative;
   top: 20px;
   padding: 10px;
+  box-shadow: var(--boxShadowProps);
 }
 
 #logo-container h2 {
@@ -85,22 +92,27 @@ main {
   text-align: center;
   padding: 60px 15px;
   font-size: 42px;
-  border-bottom: var(--borderRad);
+  border-bottom: var(--borderFlare);
 }
 
 .callout {
-  border: 5px dotted var(--brandPrimary);
+  border: 6px dotted var(--brandPrimary);
   text-align: center;
   margin: 0 30px;
+  padding: 30px 15px;
+  flex: 1 0 400px;
+  margin-bottom: 25px;
+  border-radius: var(--borderRadReverse);
+  transition: var(--transHover);
 }
 
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
-  border-top: var(--borderRad);
-  /* TODO */
+  padding: 15px;
+  border-top: var(--borderFlare);
+  margin-top: 60px;
 }
 
 #gallery {
@@ -118,13 +130,14 @@ footer {
   align-items: center;
   background: black;
   color: white;
-  margin: 2px;
+  margin: 15px;
   width: 240px;
   height: 240px;
-  border: var(--borderRad);
+  border: var(--borderFlare);
   position: relative;
-  border: var(--borderRad);
+  border: var(--borderFlare);
   transition: var(--transHover);
+  border-radius: var(--borderRad);
 }
 .on-sale {
   background: var(--brandSecondary);
@@ -146,6 +159,13 @@ footer {
 .gallery-item:hover {
   background: var(--brandSecondary);
   border-color: white;
+  border-radius: var(--borderRadReverse);
+  border: 6px dotted;
+}
+
+.callout:hover {
+  border: 6px solid var(--brandPrimary);
+  border-radius: var(--borderRad);
 }
 
 .gallery-item p {
@@ -154,6 +174,11 @@ footer {
 
 .gallery-item i {
   transition: var(--transHover);
+}
+
+footer i,
+p {
+  color: white;
 }
 
 /* ↓↓↓ Media Queries ↓↓↓ */
