@@ -1,3 +1,11 @@
+:root {
+  --brandPrimary: #8f45c8;
+  --brandSecondary: #32b46f;
+  --brandSecondaryDarker: #227549;
+  --borderRad: 6px solid var(--brandPrimary);
+  --transHover: all 260ms ease-in-out;
+}
+
 /* Global */
 * {
   font-family: "Courier New", Courier, monospace;
@@ -14,7 +22,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #47a0ce;
+  background: var(--brandPrimary);
   text-align: center;
 }
 
@@ -29,18 +37,29 @@ nav a {
   margin: 0 20px;
 }
 
+.btn {
+  padding: 15px;
+  background: var(--brandSecondary);
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  transition: var(--transHover);
+}
+
+.btn:hover {
+  background: var(--brandSecondaryDarker);
+}
+
 main {
   display: flex;
   justify-content: center;
   padding: 60px 15px;
-  /* ↓↓↓ */
-  flex-wrap: wrap;
 }
 
 #logo-container {
   display: inline-block;
   padding-top: 10px;
-  background: #47a0ce;
+  background: var(--brandPrimary);
   position: relative;
   top: 20px;
   padding: 10px;
@@ -52,11 +71,11 @@ main {
 
 .bg-dark {
   background: black;
-  color: #47a0ce;
+  color: var(--brandPrimary);
 }
 
 .bg-dark a {
-  color: #47a0ce;
+  color: var(--brandPrimary);
 }
 
 #hero {
@@ -66,10 +85,11 @@ main {
   text-align: center;
   padding: 60px 15px;
   font-size: 42px;
+  border-bottom: var(--borderRad);
 }
 
 .callout {
-  border: 5px dotted #47a0ce;
+  border: 5px dotted var(--brandPrimary);
   text-align: center;
   margin: 0 30px;
 }
@@ -79,6 +99,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+  border-top: var(--borderRad);
+  /* TODO */
 }
 
 #gallery {
@@ -91,6 +113,7 @@ footer {
 
 .gallery-item {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: black;
@@ -98,11 +121,61 @@ footer {
   margin: 2px;
   width: 240px;
   height: 240px;
+  border: var(--borderRad);
+  position: relative;
+  border: var(--borderRad);
+  transition: var(--transHover);
+}
+.on-sale {
+  background: var(--brandSecondary);
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  left: 0px;
 }
 
-@media (767px) {
-  body {
-    display: flex;
+.gallery-item:hover .on-sale {
+  background: white;
+}
+
+.gallery-item:hover i {
+  transform: scale(1.25);
+}
+
+.gallery-item:hover {
+  background: var(--brandSecondary);
+  border-color: white;
+}
+
+.gallery-item p {
+  margin-top: 0px;
+}
+
+.gallery-item i {
+  transition: var(--transHover);
+}
+
+/* ↓↓↓ Media Queries ↓↓↓ */
+
+@media (max-width: 767px) {
+  header {
     flex-direction: column;
+    align-items: stretch;
+  }
+  header nav {
+    background: black;
+  }
+  header nav a {
+    color: var(--brandPrimary);
+    font-size: 14px;
+    margin: 0 10px;
+  }
+  #hero h1 {
+    font-size: 30px;
+  }
+  footer {
+    flex-direction: column;
+    padding-bottom: 25px;
   }
 }
