@@ -1,15 +1,10 @@
-/* Global selector */
-
+/* Global */
 * {
   font-family: "Courier New", Courier, monospace;
 }
 
 html,
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* ↑↑↑ Flex CSS ↑↑↑ */
   margin: 0;
   padding: 0;
   height: 100%;
@@ -19,48 +14,54 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* ↑↑↑ Flex CSS ↑↑↑ */
   background: #47a0ce;
   text-align: center;
 }
+
 nav {
   padding: 30px 15px 15px 15px;
 }
 
 nav a {
+  color: black;
+  font-weight: bold;
   font-size: 22px;
   margin: 0 20px;
-  color: black;
-  /* font-weight: bold; */
 }
 
 main {
   display: flex;
   justify-content: center;
   padding: 60px 15px;
+  /* ↓↓↓ */
+  flex-wrap: wrap;
 }
 
 #logo-container {
-  background-color: #47a0ce;
   display: inline-block;
+  padding-top: 10px;
+  background: #47a0ce;
   position: relative;
   top: 20px;
   padding: 10px;
 }
 
+#logo-container h2 {
+  margin-bottom: 0;
+}
+
 .bg-dark {
-  /* background: black; */
+  background: black;
   color: #47a0ce;
 }
 
 .bg-dark a {
-  color: black;
-  font-weight: bold;
+  color: #47a0ce;
 }
 
 #hero {
   background: black;
-  background-image: url(../images/background.png);
+  background-image: url("../images/background.png");
   color: white;
   text-align: center;
   padding: 60px 15px;
@@ -73,21 +74,11 @@ main {
   margin: 0 30px;
 }
 
-/* TODO: Style the footer */
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* ↑↑↑ Flex CSS ↑↑↑ */
   padding: 0 15px;
-  background: black;
-  height: 75px;
-}
-.icons {
-}
-
-.fa-brands {
-  color: white;
 }
 
 #gallery {
@@ -107,4 +98,11 @@ footer {
   margin: 2px;
   width: 240px;
   height: 240px;
+}
+
+@media (767px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
 }
